@@ -15,6 +15,10 @@ public class Produto {
 
     public void getNome() {
         System.out.println(nome);
+
+    }
+    public String returnNome(){
+        return nome;
     }
 
     public void getId() {

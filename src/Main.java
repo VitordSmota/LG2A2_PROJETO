@@ -1,3 +1,4 @@
+import Modelo.Cliente.Cliente;
 import Modelo.Produtos.Categoria;
 import Modelo.Produtos.Produto;
 import java.util.Scanner;
@@ -21,15 +22,16 @@ public class Main {
 
         System.out.println("Digite sua UF");
         String UF = entrada.nextLine();
+        Cliente cliente = new Cliente(nome,CPF,UF,dataNascimento);
 
         System.out.println("Como vai, " + nome + "?");
-        EscolhaProdutos();
+        EscolhaProdutos(cliente);
 
 
 
 
     }
-    public static void EscolhaProdutos() {
+    public static void EscolhaProdutos(Cliente cliente) {
         // Criação de Categorias e Produtos
         Produto produto1 = new Produto("Motorola E22 4gb 64gb", 899.00,1);
         Produto produto2 = new Produto("Xiaomi Redmi note 11 6gb 128gb", 1648.00,2);
@@ -64,16 +66,20 @@ public class Main {
 
         switch (opcao) {
             case 1:
+                Eletronicos.setCliente(cliente);
                 Eletronicos.verCatalogo();
                 break;
             case 2:
                 Perfumaria.verCatalogo();
+                Perfumaria.setCliente(cliente);
                 break;
             case 3:
                 Livros.verCatalogo();
+                Livros.setCliente(cliente);
                 break;
             case 4:
                 Moveis.verCatalogo();
+                Moveis.setCliente(cliente);
                 break;
             default:
                 System.out.println("opção inválida!");
@@ -100,6 +106,8 @@ public class Main {
                 System.out.println("Produto inválido!");
                 break;
         };
+
+
 
     }
 

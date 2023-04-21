@@ -1,9 +1,16 @@
 package Modelo.Cliente;
 
 public class Cliente {
-    private String nome;
-    private String CPF;
-    private String UF;
-    private String dataNascimento;
+    public String nome;
+    public String CPF;
+    public String UF;
+    public String dataNascimento;
+
+    public Cliente(String nome, String CPF, String UF, String dataNascimento) {
+        this.nome = nome;
+        this.CPF = CPF;
+        this.UF = UF;
+        this.dataNascimento = dataNascimento;
+    }
 
 }
